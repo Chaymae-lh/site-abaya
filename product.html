@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تفاصيل المنتج</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    <header class="navbar">
+        <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="index.html#products">منتجات</a>
+            <a href="contact.html">اتصل بنا</a>
+        </nav>
+              <img src="images/logo.jpeg" alt="Meriem Abaya Logo" class="logo-img">
+        <nav>
+            <a href="index.html">Home</a>
+             <a href="index.html#products">Products</a>
+            <a href="contact.html"> Contact us</a>
+        </nav>
+    </header>
+
+    <section class="product-detail">
+        <!-- right: Images -->
+        <div class="product-images">
+            <img id="main-image" src="" alt="">
+            <div id="thumbnails"></div>
+        </div>
+
+        <!-- left: Product Info + Order Form -->
+        <div class="product-order">
+            <h2 id="product-name-ar"></h2>
+            <h2 id="product-name"></h2>
+            <p id="product-description-en" dir="ltr"></p>
+            <p id="product-description-ar" dir="rtl"></p>
+            <p id="product-price"></p>
+
+            <h2>اطلب الآن Order Now</h2>
+            <form id="order-form">
+                <input type="text" name="fullName" placeholder="الاسم الكامل fullName" required>
+                <input type="email" name="email" placeholder="البريد الإلكتروني email" required>
+                <input type="text" name="address" placeholder="العنوان address" required>
+                <input type="number" name="quantity" placeholder="الكمية quantity" required>
+                <button type="submit">اطلب عبر واتساب Order via WhatsApp </button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        const product = JSON.parse(localStorage.getItem('selectedProduct'));
+
+        // Set product info
+         document.getElementById('product-name-ar').innerText = product.arab_name;
+        document.getElementById('product-name').innerText = product.name;
+        document.getElementById('product-description-en').innerText = product.description_en;
+        document.getElementById('product-description-ar').innerText = product.description_ar;
+        document.getElementById('product-price').innerText = product.price;
+
+        const mainImage = document.getElementById('main-image');
+        const thumbnailsDiv = document.getElementById('thumbnails');
+
+        mainImage.src = product.images[0];
+        mainImage.alt = product.name;
+
+        // Add thumbnails
+        product.images.forEach(src => {
+            const thumb = document.createElement('img');
+            thumb.src = src;
+            thumb.alt = product.name;
+            thumb.addEventListener('click', () => {
+                mainImage.src = src; // Update main image
+            });
+            thumbnailsDiv.appendChild(thumb);
+        });
+
+        
+        document.getElementById('order-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = e.target.fullName.value;
+    const email = e.target.email.value;
+    const address = e.target.address.value;
+    const quantity = e.target.quantity.value;
+
+    const message = `
+ السلام عليكم، أود طلب المنتج التالي:
+
+  المنتج: ${product.arab_name}
+ السعر: ${product.price}
+ الكمية: ${quantity}
+
+ الاسم: ${name}
+ البريد: ${email}
+ العنوان: ${address}
+    `;
+
+    const phoneNumber = "0648723010"; // ← ضع رقمك هنا بدون +
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappURL, "_blank");
+});
+
+
+    </script>
+</body>
+</html>

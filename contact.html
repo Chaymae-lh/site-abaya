@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>اتصل بنا - Meriem Abaya</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="navbar">
+    <nav>
+        <a href="index.html">الصفحة الرئيسية</a>
+        <a href="index.html#products">منتجات</a>
+        <a href="contact.html">اتصل بنا</a>
+    </nav>
+
+    <img src="images/logo.jpeg" alt="Meriem Abaya Logo" class="logo-img">
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#products">Products</a>
+        <a href="contact.html">Contact us</a>
+    </nav>
+</header>
+
+<!-- ===== CONTENT ===== -->
+<div class="contact-page">
+    <section class="contact-section">
+
+        <h2>اتصل بنا · Contact Us</h2>
+
+        <div class="contact-info">
+            <p> <a href="mailto:meriemabaya@gmail.com">Gmail : meriemabaya@gmail.com</a></p>
+            <p> <a href="tel:+212600000000">Téléphone : 0648723910</a></p>
+            <p> <a href="https://www.instagram.com/meriem_abaya_" target="_blank">Instagram : _meriem_abaya</a></p>
+        </div>
+
+        <div class="contact-form">
+            <h2>أرسل لنا رسالة · Send us a message</h2>
+            <form id="contact-form">
+                <input type="text" id="name" placeholder="الاسم الكامل · Full Name" required>
+                <input type="email" id="email" placeholder="البريد الإلكتروني · Email" required>
+                <textarea id="message" rows="5" placeholder="رسالتك · Your message" required></textarea>
+                <button type="submit">إرسال عبر واتساب · Send via WhatsApp</button>
+            </form>
+        </div>
+
+    </section>
+</div>
+
+<!-- ===== SCRIPT ===== -->
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    const phoneNumber = "212648723910";
+
+    const whatsappMessage =
+        `New message from Meriem Abaya website:%0A%0A` +
+        `Name: ${name}%0A` +
+        `Email: ${email}%0A` +
+        `Message: ${message}`;
+
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+    window.open(whatsappURL, "_blank");
+});
+</script>
+
+</body>
+</html>
