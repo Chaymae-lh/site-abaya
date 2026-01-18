@@ -36,6 +36,7 @@ a {
     background: var(--bg-page);
     align-items: center;
     z-index: 100;
+    transition: top 0.3s;
 }
 
 .navbar a {
@@ -181,7 +182,7 @@ a {
    PRODUCTS LIST
 ===================== */
 .products {
-    min-height: ;
+    min-height: 100vh;
     padding: 40px;
     text-align: center;
 }
@@ -308,7 +309,7 @@ a {
    CONTACT PAGE
 ===================== */
 .contact-page {
-    min-height: calc(100vh - 90px);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -361,14 +362,16 @@ a {
 
 .contact-form {
     margin-top: 35px;
+    width: 80%;
+    margin-right: 10%;
 }
 
 .contact-form input,
 .contact-form textarea {
-    width: 70%;
+    width: 100%;
     margin: 5px 0;
     padding: 10px;
-    font-size: 10px;
+    font-size: 16px;
     border-radius: 20px;
     border: 1px solid #ccc;
     background-color: var(--bg-light);
@@ -416,29 +419,21 @@ a {
 /* =========================
    RESPONSIVE – MOBILE & TABLET
    ========================= */
-
 @media (max-width: 900px) {
-
-    /* ===== NAVBAR ===== */
     .navbar {
         flex-direction: column;
         gap: 15px;
         padding: 15px 20px;
     }
-
     .navbar nav {
         flex-wrap: wrap;
         justify-content: center;
         gap: 15px;
     }
 
-    /* ===== HERO SECTION ===== */
-    .hero {
-        min-height: 100vh;           /* HERO = écran entier */
+    .hero, .products, .product-detail, .contact-page {
+        min-height: 100vh;
         padding: 60px 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         box-sizing: border-box;
     }
 
@@ -455,8 +450,13 @@ a {
         text-align: center;
         margin: 0;
     }
+    .hero-text.left {
+        margin-right: 0; /* annule le margin qui le poussait à droite */
+        margin-top: 20px;
+        
+    }
 
-    /* ===== FEATURES ===== */
+
     .features {
         flex-direction: column;
         gap: 15px;
@@ -464,81 +464,33 @@ a {
         text-align: center;
     }
 
-    /* ===== PRODUCTS ===== */
-    .products {
-        padding: 60px 20px;
-        margin-top: 40px;
-        box-sizing: border-box;
-    }
-
     .product-list {
         grid-template-columns: 1fr;
         gap: 25px;
-    }
-
-    /* ===== PRODUCT DETAIL PAGE ===== */
-    .product-detail {
-        flex-direction: column;
-        padding: 60px 20px;
-        min-height: 100vh;
-        gap: 30px;
-    }
-
-    #main-image {
-        max-width: 100%;
     }
 
     .product-order {
         width: 100%;
     }
 
-    /* ===== CONTACT PAGE ===== */
-    .contact-page {
-        min-height: 100vh;           /* Contact bien grand */
-        padding: 60px 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-sizing: border-box;
-    }
-
-    .contact-container {
-        width: 100%;
-        max-width: 500px;
-    }
-
-    .contact-form {
-        width: 100%;
-    }
     .contact-form input,
     .contact-form textarea {
-      width: 100%;
-      font-size: 16px;
-  }
+        font-size: 16px;
+    }
 
-  .contact-section {
-      padding: 30px 20px;
-  }
+    .contact-section {
+        padding: 30px 20px;
+    }
 
-    /* ===== FOOTER ===== */
     .footer {
         text-align: center;
         padding: 30px 20px;
     }
 }
 
-/* ===== VERY SMALL SCREENS ===== */
+/* VERY SMALL SCREENS */
 @media (max-width: 600px) {
-
-    .hero {
-        padding: 50px 15px;
-    }
-
-    .products {
-        padding: 50px 15px;
-    }
-
-    .contact-page {
+    .hero, .products, .contact-page {
         padding: 50px 15px;
     }
 }

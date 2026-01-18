@@ -5,6 +5,31 @@
     <title>meriem abaya</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script>
+let lastScrollTop = 0;
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", function() {
+    let st = window.pageYOffset || document.documentElement.scrollTop;
+
+    // uniquement pour mobile
+    if (window.innerWidth <= 900) {
+        if (st > lastScrollTop) {
+            // scroll down → cache navbar
+            navbar.style.top = "-80px"; // ajuste selon la hauteur navbar
+        } else {
+            // scroll up → montre navbar
+            navbar.style.top = "0";
+        }
+    } else {
+        // desktop → navbar toujours visible
+        navbar.style.top = "0";
+    }
+
+    lastScrollTop = st <= 0 ? 0 : st; // pour iOS
+});
+</script>
+
 <body>
 
 <!-- NAVBAR -->
