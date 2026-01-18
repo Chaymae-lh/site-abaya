@@ -518,7 +518,7 @@ a {
     padding-top: 10px;
     padding-bottom: 20px;
     justify-content: flex-start;
-    margin-bottom: 0;
+    margin-bottom: 20px;
   }
 
   .hero-content {
@@ -540,9 +540,7 @@ a {
   .hero-text p {
     margin-top: 5px;
   }
-  .features {
-    margin-top: 10px;
-}
+  .
 
   /* PRODUCTS LIST */
   .product-list {
