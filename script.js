@@ -46,3 +46,4 @@ function openProduct(index) {
     localStorage.setItem('selectedProduct', JSON.stringify(product));
     window.location.href = "product.html"; // redirect to product detail page
 }
+
