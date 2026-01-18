@@ -77,7 +77,8 @@ a {
    HERO SECTION
 ===================== */
 .hero {
-    height: 45vh;
+    min-height: 100vh;
+    height: auto;
     background: linear-gradient(rgba(249,246,242,0.85), rgba(249,246,242,0.85)),
                 url("images/logo.jpeg") center/cover no-repeat;
     display: flex;
@@ -180,6 +181,7 @@ a {
    PRODUCTS LIST
 ===================== */
 .products {
+    min-height: ;
     padding: 40px;
     text-align: center;
 }
@@ -215,6 +217,8 @@ a {
    PRODUCT DETAIL PAGE
 ===================== */
 .product-detail {
+    min-height: 100vh;
+    box-sizing: border-box;
     padding: 40px;
     display: flex;
     flex-wrap: wrap;
@@ -475,7 +479,8 @@ a {
     /* ===== PRODUCT DETAIL PAGE ===== */
     .product-detail {
         flex-direction: column;
-        padding: 40px 20px;
+        padding: 60px 20px;
+        min-height: 100vh;
         gap: 30px;
     }
 
@@ -505,6 +510,15 @@ a {
     .contact-form {
         width: 100%;
     }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      font-size: 16px;
+  }
+
+  .contact-section {
+      padding: 30px 20px;
+  }
 
     /* ===== FOOTER ===== */
     .footer {
