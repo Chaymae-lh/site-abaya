@@ -12,23 +12,20 @@ const navbar = document.querySelector(".navbar");
 window.addEventListener("scroll", function() {
     let st = window.pageYOffset || document.documentElement.scrollTop;
 
-    // uniquement pour mobile
-    if (window.innerWidth <= 900) {
+    if (window.innerWidth <= 900) { // mobile
         if (st > lastScrollTop) {
-            // scroll down → cache navbar
-            navbar.style.top = "-80px"; // ajuste selon la hauteur navbar
+            navbar.style.top = "-80px"; // cache navbar
         } else {
-            // scroll up → montre navbar
-            navbar.style.top = "0";
+            navbar.style.top = "0"; // montre navbar
         }
     } else {
-        // desktop → navbar toujours visible
-        navbar.style.top = "0";
+        navbar.style.top = "0"; // desktop toujours visible
     }
 
-    lastScrollTop = st <= 0 ? 0 : st; // pour iOS
+    lastScrollTop = st <= 0 ? 0 : st;
 });
 </script>
+
 
 <body>
 

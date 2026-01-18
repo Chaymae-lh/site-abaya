@@ -420,28 +420,22 @@ a {
    RESPONSIVE – MOBILE & TABLET
    ========================= */
 @media (max-width: 900px) {
-    .navbar {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px 20px;
-    }
-    .navbar nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
 
-    .hero, .products, .product-detail, .contact-page {
+    /* ===== HERO ===== */
+    .hero {
         min-height: 100vh;
         padding: 60px 20px;
-        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .hero-content {
-        flex-direction: column;
+        flex-direction: column; /* empile anglais + arabe */
         width: 100%;
         max-width: 100%;
-        gap: 30px;
+        gap: 20px;
         box-sizing: border-box;
     }
 
@@ -450,41 +444,55 @@ a {
         text-align: center;
         margin: 0;
     }
+
     .hero-text.left {
-        margin-right: 0; /* annule le margin qui le poussait à droite */
-        margin-top: 20px;
-        
+        margin-right: 0;
+        margin-top: 15px; /* espace sous l'anglais */
     }
 
-
-    .features {
-        flex-direction: column;
-        gap: 15px;
-        padding: 30px 20px;
-        text-align: center;
+    /* ===== PRODUCTS ===== */
+    .products {
+        padding: 40px 20px;
+        margin-top: 0;
     }
 
     .product-list {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* produits empilés */
         gap: 25px;
+    }
+
+    /* ===== PRODUCT DETAIL ===== */
+    .product-detail {
+        flex-direction: column; /* photos en haut, desc + form dessous */
+        padding: 40px 20px;
+        gap: 30px;
+        min-height: auto; /* laisse la hauteur s’adapter */
     }
 
     .product-order {
         width: 100%;
     }
 
-    .contact-form input,
-    .contact-form textarea {
-        font-size: 16px;
+    /* ===== CONTACT PAGE ===== */
+    .contact-page {
+        min-height: auto; /* supprime l’espace vide */
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .contact-section {
-        padding: 30px 20px;
+        width: 100%;
+        max-width: 500px;
+        padding: 20px;
+        border-radius: 20px;
     }
 
-    .footer {
-        text-align: center;
-        padding: 30px 20px;
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        font-size: 16px;
     }
 }
 
