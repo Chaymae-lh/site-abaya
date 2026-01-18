@@ -499,7 +499,6 @@ a {
         font-size: 16px;
     }
 }
-
 @media (max-width: 768px) {
 
   /* NAVBAR */
@@ -514,15 +513,31 @@ a {
   }
 
   /* HERO */
+  .hero {
+    min-height: auto;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    justify-content: flex-start;
+  }
+
   .hero-content {
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
+    margin-top: 0;
   }
 
   .hero-text {
     max-width: 100%;
     margin: 0;
     text-align: center;
+  }
+
+  .hero-text h2 {
+    margin-top: 0;
+  }
+
+  .hero-text p {
+    margin-top: 5px;
   }
 
   /* PRODUCTS LIST */
@@ -573,19 +588,8 @@ a {
     width: 100%;
     margin: 20px 0 0 0;
   }
-  .hero {
-    min-height: 70vh;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-
-  .hero-text h2 {
-    margin-top: 0;
-  }
-
-  .hero-text p {
-    margin-top: 5px;
-  }
 
 }
+
+
 
